@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
-import { CancelledError, isCancelledError } from "@tanstack/react-query";
+
 interface Response {
   count: number;
   results: Game[];
@@ -9,6 +9,13 @@ export interface Game {
   id: number;
   name: string;
   background_image: string;
+  parent_platforms: [{ platform: Platform }];
+}
+
+export interface Platform {
+  id: number;
+  name: string;
+  slug: string;
 }
 const useGames = () => {
   const [games, setGames] = useState<Game[]>([]);
@@ -25,7 +32,6 @@ const useGames = () => {
       });
     return () => controller.abort();
   }, []);
-
   return { games, error };
 };
 
