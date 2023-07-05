@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
+import { CancelledError, isCancelledError } from "@tanstack/react-query";
 interface Response {
   count: number;
   results: Game[];
@@ -13,10 +14,15 @@ const useGames = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
+    const controller = new AbortController();
     apiClient
-      .get<Response>("/games")
+      .get<Response>("/games", { signal: controller.signal })
       .then((res) => setGames(res.data.results))
-      .catch((err) => setError(err.message));
+      .catch((err) => {
+        if (err.message === "canceled") return; //this differs from Mosh' implementation he use instanceof CanceledError, but I could not get this to work
+        setError(err.message);
+      });
+    return () => controller.abort();
   }, []);
 
   return { games, error };
