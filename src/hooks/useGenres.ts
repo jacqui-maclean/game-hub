@@ -2,16 +2,16 @@ import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 interface Response {
   count: number;
-  results: Genres[];
+  results: Genre[];
 }
-interface Genres {
+export interface Genre {
   id: number;
   games_count: number;
   slug: string;
   image_background: string;
 }
 const useGenres = () => {
-  const [genres, setGenres] = useState<Genres[]>([]);
+  const [genres, setGenres] = useState<Genre[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
