@@ -8,6 +8,7 @@ export interface Genre {
   games_count: number;
   slug: string;
   image_background: string;
+  name: string;
 }
 const useGenres = () => useData<Genre>("/genres");
 
