@@ -9,12 +9,13 @@ import {
 import useGenres from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/crop-image";
 import { Genre } from "../hooks/useGenres";
+import { GameQuery } from "../App";
 interface Props {
   onSelect: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  gameQuery: GameQuery;
 }
 
-const GenreList = ({ onSelect, selectedGenre }: Props) => {
+const GenreList = ({ onSelect, gameQuery }: Props) => {
   const { data, isLoading, error } = useGenres();
   if (error) return null;
   if (isLoading) return <Spinner />;
@@ -29,7 +30,7 @@ const GenreList = ({ onSelect, selectedGenre }: Props) => {
               src={getCroppedImageUrl(genre.image_background)}
             />
             <Button
-              fontWeight={selectedGenre?.id == genre.id ? "bold" : "normal"}
+              fontWeight={gameQuery.genre?.id == genre.id ? "bold" : "normal"}
               fontSize="lg"
               variant="link"
               onClick={() => onSelect(genre)}

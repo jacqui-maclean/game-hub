@@ -9,19 +9,19 @@ import {
 import { BsChevronDown } from "react-icons/bs";
 import usePlatforms from "../hooks/usePlatforms";
 import { Platform } from "../hooks/useData";
+import { GameQuery } from "../App";
 interface Props {
   onSelect: (platform: Platform) => void;
-  selectedPlatform: Platform | null;
+  gameQuery: GameQuery;
 }
-const PlatformSelector = ({ onSelect, selectedPlatform }: Props) => {
-  console.log("selectedPlatform ", selectedPlatform);
+const PlatformSelector = ({ onSelect, gameQuery }: Props) => {
   const { data, error } = usePlatforms();
   if (error) return null;
   return (
     <HStack>
       <Menu>
         <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-          {selectedPlatform?.name || "Platform"}
+          {gameQuery.platform?.name || "Platform"}
         </MenuButton>
         <MenuList>
           {data.map((platform) => (
