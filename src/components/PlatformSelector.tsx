@@ -5,23 +5,23 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
-  Text,
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import usePlatforms from "../hooks/usePlatforms";
 import { Platform } from "../hooks/useData";
 interface Props {
   onSelect: (platform: Platform) => void;
-  selectedPlatformName: string | undefined;
+  selectedPlatform: Platform | null;
 }
-const PlatformSelector = ({ onSelect, selectedPlatformName }: Props) => {
+const PlatformSelector = ({ onSelect, selectedPlatform }: Props) => {
+  console.log("selectedPlatform ", selectedPlatform);
   const { data, error } = usePlatforms();
   if (error) return null;
   return (
     <HStack>
       <Menu>
         <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-          {selectedPlatformName || "Platforms"}
+          {selectedPlatform?.name || "Platform"}
         </MenuButton>
         <MenuList>
           {data.map((platform) => (

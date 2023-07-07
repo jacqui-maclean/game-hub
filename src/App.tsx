@@ -39,8 +39,7 @@ function App() {
       <GridItem area="main">
         <PlatformSelector
           onSelect={(platform) => setSelectedPlatform(platform)}
-          // decided to only pass what was needed which is the name as string or undefined
-          selectedPlatformName={selectedPlatform?.name}
+          selectedPlatform={selectedPlatform}
         />
         <GamesGrid
           selectedGenre={selectedGenre}
