@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
+import axios, { AxiosRequestConfig } from "axios";
 
 interface Response<T> {
   count: number;
@@ -18,29 +19,36 @@ export interface Platform {
   name: string;
   slug: string;
 }
-const useData = <T>(endpoint: string) => {
+const useData = <T>(
+  endpoint: string,
+  requestConfig?: AxiosRequestConfig,
+  deps?: any[]
+) => {
   const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const controller = new AbortController();
-    setIsLoading(true);
-    apiClient
-      .get<Response<T>>(endpoint, { signal: controller.signal })
-      .then((res) => {
-        setData(res.data.results),
-          console.log("from inside apiClient response", res.data.results);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        if (err.message === "canceled") return; //this differs from Mosh' implementation he use instanceof CanceledError, but I could not get this to work
-        setError(err.message);
-        console.log("from inside apiclient error ", err.message);
-        setIsLoading(false);
-      });
-    return () => controller.abort();
-  }, []);
+  useEffect(
+    () => {
+      const controller = new AbortController();
+      setIsLoading(true);
+      apiClient
+        .get<Response<T>>(endpoint, {
+          signal: controller.signal,
+          ...requestConfig,
+        })
+        .then((res) => {
+          setData(res.data.results), setIsLoading(false);
+        })
+        .catch((err) => {
+          if (err.message === "canceled") return; //this differs from Mosh' implementation he use instanceof CanceledError, but I could not get this to work
+          setError(err.message);
+          setIsLoading(false);
+        });
+      return () => controller.abort();
+    },
+    deps ? [...deps] : []
+  );
   return { data, error, isLoading };
 };
 
