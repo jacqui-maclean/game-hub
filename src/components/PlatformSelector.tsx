@@ -1,6 +1,6 @@
 import {
   Button,
-  HStack,
+  Flex,
   Menu,
   MenuButton,
   MenuItem,
@@ -18,7 +18,7 @@ const PlatformSelector = ({ onSelect, gameQuery }: Props) => {
   const { data, error } = usePlatforms();
   if (error) return null;
   return (
-    <HStack>
+    <Flex>
       <Menu>
         <MenuButton as={Button} rightIcon={<BsChevronDown />}>
           {gameQuery.platform?.name || "Platform"}
@@ -31,7 +31,7 @@ const PlatformSelector = ({ onSelect, gameQuery }: Props) => {
           ))}
         </MenuList>
       </Menu>
-    </HStack>
+    </Flex>
   );
 };
 
