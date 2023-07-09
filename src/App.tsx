@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GamesGrid from "./components/GamesGrid";
 import GenreList from "./components/GenreList";
@@ -61,6 +61,14 @@ function App() {
               }
               gameQuery={gameQuery}
             />
+            <Button
+              onClick={() => {
+                setGameQuery({ ...gameQuery, sortOrder: null, platform: null });
+              }}
+              marginLeft={5}
+            >
+              Clear
+            </Button>
           </Flex>
         </Box>
         <GamesGrid gameQuery={gameQuery} />
