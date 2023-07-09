@@ -23,10 +23,10 @@ const SearchInput = ({ onSubmit }: Props) => {
         </InputLeftAddon>
         <Input
           ref={ref}
-          variant="filled"
+          variant="outline"
           placeholder="Search games"
           borderRadius={20}
-          backgroundColor={"gray.700"}
+          // backgroundColor={"gray.700"}
         />
       </InputGroup>
     </form>
