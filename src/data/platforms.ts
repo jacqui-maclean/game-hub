@@ -17,90 +17,91 @@ export default [
       },
     ],
   },
-  {
-    id: 2,
-    name: "PlayStation",
-    slug: "playstation",
-    platforms: [
-      {
-        id: 187,
-        name: "PlayStation 5",
-        slug: "playstation5",
-        games_count: 894,
-        image_background:
-          "https://media.rawg.io/media/games/1f4/1f47a270b8f241e4676b14d39ec620f7.jpg",
-        image: null,
-        year_start: 2020,
-        year_end: null,
-      },
-      {
-        id: 18,
-        name: "PlayStation 4",
-        slug: "playstation4",
-        games_count: 6660,
-        image_background:
-          "https://media.rawg.io/media/games/8a0/8a02f84a5916ede2f923b88d5f8217ba.jpg",
-        image: null,
-        year_start: null,
-        year_end: null,
-      },
-      {
-        id: 16,
-        name: "PlayStation 3",
-        slug: "playstation3",
-        games_count: 3183,
-        image_background:
-          "https://media.rawg.io/media/games/8e4/8e4de3f54ac659e08a7ba6a2b731682a.jpg",
-        image: null,
-        year_start: null,
-        year_end: null,
-      },
-      {
-        id: 15,
-        name: "PlayStation 2",
-        slug: "playstation2",
-        games_count: 1981,
-        image_background:
-          "https://media.rawg.io/media/games/e60/e601c02ec49ef4f1d5ef147994b3935f.jpg",
-        image: null,
-        year_start: null,
-        year_end: null,
-      },
-      {
-        id: 27,
-        name: "PlayStation",
-        slug: "playstation1",
-        games_count: 1627,
-        image_background:
-          "https://media.rawg.io/media/screenshots/6cc/6ccd31115c74d58edb41d0855567d00f.jpg",
-        image: null,
-        year_start: null,
-        year_end: null,
-      },
-      {
-        id: 19,
-        name: "PS Vita",
-        slug: "ps-vita",
-        games_count: 1451,
-        image_background:
-          "https://media.rawg.io/media/games/6d3/6d33014a4ed48a19c30a77ead5a0f62e.jpg",
-        image: null,
-        year_start: null,
-        year_end: null,
-      },
-      {
-        id: 17,
-        name: "PSP",
-        slug: "psp",
-        games_count: 1364,
-        image_background:
-          "https://media.rawg.io/media/games/43d/43d96923f98c75727bd55b676fb3b6d3.jpg",
-        image: null,
-        year_start: null,
-        year_end: null,
-      },
-    ],
-  },
+  // {
+  //   id: 2,
+  //   name: "PlayStation",
+  //   slug: "playstation",
+  //   platforms: [
+  //     {
+  //       id: 187,
+  //       name: "PlayStation 5",
+  //       slug: "playstation5",
+  //       games_count: 894,
+  //       image_background:
+  //         "https://media.rawg.io/media/games/1f4/1f47a270b8f241e4676b14d39ec620f7.jpg",
+  //       image: null,
+  //       year_start: 2020,
+  //       year_end: null,
+  //     },
+  //     {
+  //       id: 18,
+  //       name: "PlayStation 4",
+  //       slug: "playstation4",
+  //       games_count: 6660,
+  //       image_background:
+  //         "https://media.rawg.io/media/games/8a0/8a02f84a5916ede2f923b88d5f8217ba.jpg",
+  //       image: null,
+  //       year_start: null,
+  //       year_end: null,
+  //     },
+  //     {
+  //       id: 16,
+  //       name: "PlayStation 3",
+  //       slug: "playstation3",
+  //       games_count: 3183,
+  //       image_background:
+  //         "https://media.rawg.io/media/games/8e4/8e4de3f54ac659e08a7ba6a2b731682a.jpg",
+  //       image: null,
+  //       year_start: null,
+  //       year_end: null,
+  //     },
+  //     {
+  //       id: 15,
+  //       name: "PlayStation 2",
+  //       slug: "playstation2",
+  //       games_count: 1981,
+  //       image_background:
+  //         "https://media.rawg.io/media/games/e60/e601c02ec49ef4f1d5ef147994b3935f.jpg",
+  //       image: null,
+  //       year_start: null,
+  //       year_end: null,
+  //     },
+  //     {
+  //       id: 27,
+  //       name: "PlayStation",
+  //       slug: "playstation1",
+  //       games_count: 1627,
+  //       image_background:
+  //         "https://media.rawg.io/media/screenshots/6cc/6ccd31115c74d58edb41d0855567d00f.jpg",
+  //       image: null,
+  //       year_start: null,
+  //       year_end: null,
+  //     },
+  //     {
+  //       id: 19,
+  //       name: "PS Vita",
+  //       slug: "ps-vita",
+  //       games_count: 1451,
+  //       image_background:
+  //         "https://media.rawg.io/media/games/6d3/6d33014a4ed48a19c30a77ead5a0f62e.jpg",
+  //       image: null,
+  //       year_start: null,
+  //       year_end: null,
+  //     },
+  //     {
+  //       id: 17,
+  //       name: "PSP",
+  //       slug: "psp",
+  //       games_count: 1364,
+  //       image_background:
+  //         "https://media.rawg.io/media/games/43d/43d96923f98c75727bd55b676fb3b6d3.jpg",
+  //       image: null,
+  //       year_start: null,
+  //       year_end: null,
+  //     },
+  //   ],
+  // },
+  //have removed playstation because the api returns no response for it atm
   {
     id: 3,
     name: "Xbox",
