@@ -26,7 +26,6 @@ const SearchInput = ({ onSubmit }: Props) => {
           variant="outline"
           placeholder="Search games"
           borderRadius={20}
-          // backgroundColor={"gray.700"}
         />
       </InputGroup>
     </form>

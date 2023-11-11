@@ -9,9 +9,15 @@ const ColorModeSwitch = () => {
         onChange={toggleColorMode}
         colorScheme="green"
       />
-      <Text whiteSpace="nowrap" paddingRight={3}>
-        Dark Mode
-      </Text>
+      {colorMode === "dark" ? (
+        <Text whiteSpace="nowrap" paddingRight={3}>
+          Light Mode
+        </Text>
+      ) : (
+        <Text whiteSpace="nowrap" paddingRight={3}>
+          Dark Mode
+        </Text>
+      )}
     </HStack>
   );
 };
